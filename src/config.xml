@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="CoNWeT" name="valuelist" version="0.1.0">
+
+    <details>
+        <title>Value List Transformer</title>
+        <homepage>https://github.com/aarranz/valuelist-operator</homepage>
+        <authors>Álvaro Arranz &lt;aarranz@ficodes.com&gt;</authors>
+        <email>wirecloud@conwet.com</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Transform list of objects into list of values</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker>https://github.com/Wirecloud/valuelist-operator/issues</issuetracker>
+    </details>
+
+    <preferences>
+        <!-- In a near future, this operator will support retrieving data from several attributes -->
+        <preference name="attributes" type="text" label="Attribute" description="Attribute to retrieve from the objects contained in the initial list" default="id" required="true" />
+    </preferences>
+
+    <wiring>
+        <inputendpoint name="indata" label="In" type="text" friendcode="entity-list" />
+        <outputendpoint name="outdata" label="Out" type="text" />
+    </wiring>
+
+    <scripts>
+        <script src="js/main.js"/>
+    </scripts>
+
+</operator>
