@@ -3,35 +3,40 @@
 The Value List Transformer operator is a WireCloud operator that provides
 convert list of objects
 
-## Build
 
-Be sure to have installed [Node.js](http://node.js) in your system. For example, you can install it on Ubuntu and Debian running the following commands:
+## Build dependencies
+
+Be sure to have installed [Node.js](https://nodejs.org/){% if (bower) { %} and [Bower](http://bower.io){% }%} in your system. For example, you can install it on Ubuntu and Debian running the following commands:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup | sudo bash -
-sudo apt-get install nodejs
-sudo apt-get install npm
+sudo apt update; sudo apt install curl gnupg
+curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
+sudo apt install nodejs npm
 ```
 
-Install other npm dependencies by running:
+You also have to install the [Grunt](https://gruntjs.com/)'s command line interface (CLI):
+
+```sudo npm install -g grunt-cli
+```
+
+The remaining dependencies are installed using npm (you have to run this command
+inside the folder where you downloaded this repository):
 
 ```bash
 npm install
 ```
 
-In order to build this operator you need to download grunt:
 
-```bash
-sudo npm install -g grunt-cli
-```
+## Build
 
-And now, you can use grunt:
+Once installed all the build dependencies you can build this operator by using grunt:
 
 ```bash
 grunt
 ```
 
 If everything goes well, you will find a wgt file in the `dist` folder.
+
 
 ## Documentation
 
