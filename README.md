@@ -1,10 +1,9 @@
-# Value List Transformer operator
+# Value List Filter operator
 
-The Value List Transformer operator is a WireCloud operator that provides
-a simple mechanim of converting list of objects, produced by an output endpoint,
-into a list of values. This is done by filtering the JSON data contained in the
-array using the path configured through a preference using a dot-sepparated
-sytanx.
+The Value List Filter operator is a WireCloud operator that provides a simple
+mechanim of converting list of objects, produced by an output endpoint, into a
+list of values. This is done by filtering the JSON data contained in the array
+using the path configured through a preference using a dot-sepparated sytanx.
 
 
 ## Build dependencies

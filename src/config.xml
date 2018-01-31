@@ -2,13 +2,13 @@
 <operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="CoNWeT" name="value-list-filter" version="0.1.0">
 
     <details>
-        <title>Value List Transformer</title>
+        <title>Value List Filter</title>
         <homepage>https://github.com/Wirecloud/value-list-filter-operator</homepage>
         <authors>Álvaro Arranz &lt;aarranz@ficodes.com&gt;</authors>
         <email>wirecloud@conwet.com</email>
         <image></image>
         <smartphoneimage></smartphoneimage>
-        <description>Transform list of objects into list of values</description>
+        <description>Transform lists of objects into lists of values</description>
         <longdescription>DESCRIPTION.md</longdescription>
         <changelog>doc/changelog.md</changelog>
         <doc>doc/userguide.md</doc>
