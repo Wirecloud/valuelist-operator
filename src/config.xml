@@ -18,7 +18,7 @@
 
     <preferences>
         <!-- In a near future, this operator will support retrieving data from several attributes -->
-        <preference name="attributes" type="text" label="Attribute" description="Attribute to retrieve from the objects contained in the initial list" default="id" required="true" />
+        <preference name="prop_name" type="text" label="Attribute" description="Attribute to retrieve from the objects contained in the initial list" default="id" required="true" />
     </preferences>
 
     <wiring>
