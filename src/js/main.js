@@ -1,8 +1,8 @@
 /*
- * valuelist
- * https://github.com/aarranz/valuelist-operator
+ * value-list-filter
+ * https://github.com/Wirecloud/value-list-filter-operator
  *
- * Copyright (c) 2017 Vendor
+ * Copyright (c) 2017-2018 CoNWeT Lab., Universidad Politecnica de Madrid
  * Licensed under the MIT license.
  */
 
