@@ -1,22 +1,26 @@
 # Value List Transformer operator
 
 The Value List Transformer operator is a WireCloud operator that provides
-convert list of objects
+a simple mechanim of converting list of objects, produced by an output endpoint,
+into a list of values. This is done by filtering the JSON data contained in the
+array using the path configured through a preference using a dot-sepparated
+sytanx.
 
 
 ## Build dependencies
 
-Be sure to have installed [Node.js](https://nodejs.org/){% if (bower) { %} and [Bower](http://bower.io){% }%} in your system. For example, you can install it on Ubuntu and Debian running the following commands:
+Be sure to have installed [Node.js](https://nodejs.org/) in your system. For example, you can install it on Ubuntu and Debian running the following commands:
 
 ```bash
 sudo apt update; sudo apt install curl gnupg
 curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
-sudo apt install nodejs npm
+sudo apt install nodejs npm 
 ```
 
 You also have to install the [Grunt](https://gruntjs.com/)'s command line interface (CLI):
 
-```sudo npm install -g grunt-cli
+```bash
+sudo npm install -g grunt-cli
 ```
 
 The remaining dependencies are installed using npm (you have to run this command
