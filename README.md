@@ -1,5 +1,8 @@
 # Value List Filter operator
 
+[![Build Status](https://travis-ci.org/Wirecloud/value-list-filter-operator.svg?branch=develop)](https://travis-ci.org/Wirecloud/value-list-filter-operator)
+[![Coverage Status](https://coveralls.io/repos/github/Wirecloud/value-list-filter-operator/badge.svg?branch=develop)](https://coveralls.io/github/Wirecloud/value-list-filter-operator?branch=develop)
+
 The Value List Filter operator is a WireCloud operator that provides a simple
 mechanim of converting list of objects, produced by an output endpoint, into a
 list of values. This is done by filtering the JSON data contained in the array
