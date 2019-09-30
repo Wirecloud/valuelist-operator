@@ -11,7 +11,7 @@
                 type: 'operator',
                 prefs: {
                     "prop_name": "attr",
-                    "send_nulls": true,
+                    "send_nulls": true
                 },
                 inputs: ['indata'],
                 outputs: ['outdata']
@@ -42,6 +42,42 @@
             filterList([{"a": [false, {"c": "value"}]}]);
 
             expect(MashupPlatform.wiring.pushEvent).toHaveBeenCalledWith('outdata', ["value"]);
+        });
+
+        it("resends null values (allowed to send nulls)", () => {
+            MashupPlatform.prefs.set("prop_name", "a.0.c");
+            MashupPlatform.prefs.set("send_nulls", true);
+
+            filterList(null);
+
+            expect(MashupPlatform.wiring.pushEvent).toHaveBeenCalledWith('outdata', null);
+        });
+
+        it("filters null values (disallowed to send nulls)", () => {
+            MashupPlatform.prefs.set("prop_name", "a.0.c");
+            MashupPlatform.prefs.set("send_nulls", false);
+
+            filterList(null);
+
+            expect(MashupPlatform.wiring.pushEvent).not.toHaveBeenCalled();
+        });
+
+        it("filters null values from lists (allowed to send nulls)", () => {
+            MashupPlatform.prefs.set("prop_name", "a.0");
+            MashupPlatform.prefs.set("send_nulls", true);
+
+            filterList([{a: [1]}, null, {a: [3]}, {a: {b: null}}]);
+
+            expect(MashupPlatform.wiring.pushEvent).toHaveBeenCalledWith('outdata', [1, null, 3, null]);
+        });
+
+        it("filters null values from lists (disallowed to send nulls)", () => {
+            MashupPlatform.prefs.set("prop_name", "a.0");
+            MashupPlatform.prefs.set("send_nulls", false);
+
+            filterList([{a: [1]}, null, {a: [3]}, {a: {b: null}}]);
+
+            expect(MashupPlatform.wiring.pushEvent).toHaveBeenCalledWith('outdata', [1, 3]);
         });
 
         it("don't crash when filtering multilevel paths and some level does not exist", function () {

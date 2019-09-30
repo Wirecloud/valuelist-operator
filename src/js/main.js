@@ -19,7 +19,7 @@
             }
         }
 
-        if (data == null || !Array.isArray(data)) {
+        if (data != null && !Array.isArray(data)) {
             throw new MashupPlatform.wiring.EndpointTypeError();
         }
 
@@ -38,17 +38,22 @@
 
     var filterList = function filterList(indata) {
         indata = parseInputEndpointData(indata);
+
+        var send_nulls = MashupPlatform.prefs.get("send_nulls");
+        if (indata == null && send_nulls) {
+            return MashupPlatform.wiring.pushEvent('outdata', null);
+        } else if (indata == null) {
+            return; // do nothing
+        }
+
         var path = MashupPlatform.prefs.get('prop_name');
         if (path != "") {
             path = path.split('.');
             var outdata = indata.map(filterData, path);
 
-            if (!MashupPlatform.prefs.get('send_nulls')) {
-                outdata = outdata.filter(function(e) {
-                    return e != null;
-                });
+            if (!send_nulls) {
+                outdata = outdata.filter(value => {return value != null});
             }
-
             MashupPlatform.wiring.pushEvent("outdata", outdata);
         }
     };
