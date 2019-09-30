@@ -1,3 +1,12 @@
+/*
+ * value-list-filter
+ * https://github.com/Wirecloud/value-list-filter-operator
+ *
+ * Copyright (c) 2017-2018 CoNWeT Lab., Universidad Politecnica de Madrid
+ * Copyright (c) 2019 Future Internet Consulting and Development Solutions S.L.
+ * Licensed under the MIT license.
+ */
+
 /* globals MockMP */
 
 (function () {
