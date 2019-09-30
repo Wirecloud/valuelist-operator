@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="CoNWeT" name="value-list-filter" version="0.1.2">
+<operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="CoNWeT" name="value-list-filter" version="0.1.3rc3">
 
     <details>
         <title>Value List Filter</title>
@@ -19,6 +19,7 @@
     <preferences>
         <!-- In a near future, this operator will support retrieving data from several attributes -->
         <preference name="prop_name" type="text" label="Attribute" description="Attribute to retrieve from the objects contained in the initial list" default="id" required="true" />
+        <preference name="send_nulls" type="boolean" label="Send Nulls" description="Enable this option to propagate null values, leave it disable to filter null events" default="true" />
     </preferences>
 
     <wiring>

@@ -10,7 +10,8 @@
             window.MashupPlatform = new MockMP({
                 type: 'operator',
                 prefs: {
-                    "prop_name": "attr"
+                    "prop_name": "attr",
+                    "send_nulls": true,
                 },
                 inputs: ['indata'],
                 outputs: ['outdata']

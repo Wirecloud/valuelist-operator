@@ -42,6 +42,13 @@
         if (path != "") {
             path = path.split('.');
             var outdata = indata.map(filterData, path);
+
+            if (!MashupPlatform.prefs.get('send_nulls')) {
+                outdata = outdata.filter(function(e) {
+                    return e != null;
+                });
+            }
+
             MashupPlatform.wiring.pushEvent("outdata", outdata);
         }
     };
