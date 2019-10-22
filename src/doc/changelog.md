@@ -1,6 +1,7 @@
-## v0.1.3rc1 (2019-09-17)
+## v0.1.3 (2019-10-22)
 
-Add new boolean preference: propagate null values
+- Add new boolean preference to select between propagating null values or not.
+
 
 ## v0.1.2 (2018-11-26)
 
